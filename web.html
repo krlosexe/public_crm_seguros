@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Web</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        
+        <script src="https://use.fontawesome.com/8e3580dfec.js"></script>
+        <!-- Styles -->
+        <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .hero_archive {
+                background-color: #2a66f6;
+                color: #fff;
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+
+
+            ul{
+                margin-left: -34px;
+            }
+            ul li{
+                list-style: none;
+            }
+
+            #list-hosting img{
+                width: 150px !important;
+                height: 130px !important;
+            }
+
+            #list-hosting .card{
+                padding: 4%;
+                margin: 2% 0;
+            }
+
+            #list-hosting .card-footer{
+                margin: 2% 0;
+            }
+
+            #list-hosting strong{
+                font-weight: bold;
+
+            }
+            
+        </style>
+    </head>
+    <body>
+      <div class="hero_archive">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-center">
+                <div class="hero_archive__thumb">
+                <img class="hero_archive__icon" src="https://www.comparahosting.com/wp-content/themes/comparahosting/img/header-icon-vps.png">
+                </div>
+
+                <div class="hero_archive__content">
+                <h1 class="hero_archive__title">Descubre y compara empresas de <br> Hosting VPS para tu sitio web</h1>
+                <p class="hero_archive__description">¿Estás buscando un VPS para tu sitio web? ComparaHosting te brinda las mejores comparativas de hosting en español.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+            <br><br>
+      <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div>
+                        <p>
+                            <a class="btn btn-primary" id="btn-category" data-toggle="collapse" href="#filter-category" role="button" aria-expanded="true" aria-controls="filter-category">Categorias</a>
+                        </p>
+                        <ul class="filter_list filter_list--radio collapse multi-collapse show" id="filter-category">
+                            
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <p>
+                            <a class="btn btn-primary" id="btn-benefits" data-toggle="collapse" href="#filter-benefits" role="button" aria-expanded="true" aria-controls="filter-benefits">Beneficios</a>
+                        </p>
+                        <ul class="filter_list filter_list--radio collapse multi-collapse show" id="filter-benefits">
+                            
+                        </ul>
+                    </div>
+
+
+
+
+                    <div>
+                        <p>
+                            <a class="btn btn-primary" id="btn-customer-support" data-toggle="collapse" href="#filter-customer-support" role="button" aria-expanded="true" aria-controls="filter-customer-support">Atencion al Cliente</a>
+                        </p>
+                        <ul class="filter_list filter_list--radio collapse multi-collapse" id="filter-customer-support">
+                            
+                        </ul>
+                    </div>
+
+
+
+                    <div>
+                        <p>
+                            <a class="btn btn-primary" id="btn-way-to-pay" data-toggle="collapse" href="#filter-way-to-pay" role="button" aria-expanded="true" aria-controls="filter-way-to-pay">Formas de Pago</a>
+                        </p>
+                        <ul class="filter_list filter_list--radio collapse multi-collapse" id="filter-way-to-pay">
+                            
+                        </ul>
+                    </div>
+
+
+
+
+                    <div>
+                        <p>
+                            <a class="btn btn-primary" id="btn-countries" data-toggle="collapse" href="#filter-countries" role="button" aria-expanded="true" aria-controls="filter-countries">Pais</a>
+                        </p>
+                        <ul class="filter_list filter_list--radio collapse multi-collapse" id="filter-countries">
+                            
+                        </ul>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-8">
+                    <div class="row" id="list-hosting">
+                        
+                    </div>
+                </div>
+            </div>
+      </div>
+      <input type="hidden" id="ruta" value="http://127.0.0.1:8000">
+    </body>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
+        
+        
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="http://127.0.0.1:8000/vendor/select2-4.0.11/dist/js/select2.min.js"></script>
+    <script src="http://127.0.0.1:8000/js/funciones.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            FilterCategory("#filter-category")
+            FilterBenefits("#filter-benefits")
+            FilterSupport("#filter-customer-support")
+            FilterWayToPay("#filter-way-to-pay")
+            FilterCountries("#filter-countries")
+
+
+            ListHostings()
+
+            filters()
+        });
+
+        function filters(){
+            $(".filter-events").change(function (e) { 
+                ListHostings()
+             });
+        }
+       
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
