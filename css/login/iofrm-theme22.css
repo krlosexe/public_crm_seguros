@@ -20,9 +20,9 @@
 
 .website-logo {
     display: inline-block;
-    top: 50px;
-    left: initial;
-    right: 50px;
+    top: 140px;
+    left: 80px;
+    right: initial;
     bottom: initial;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .website-logo .logo {
-    background-image: url("../images/logo-dark.svg");
+    background-image: url("../images/logo-light.svg");
 }
 
 .website-logo .logo img {
@@ -43,7 +43,7 @@
 }
 
 .website-logo-inside .logo {
-    background-image: url("../images/logo-dark.svg");
+    background-image: url("../images/logo-light.svg");
 }
 
 .website-logo-inside .logo img {
@@ -52,29 +52,29 @@
 
 .img-holder {
     width: 550px;
-    background-color: #FAFAFA;
+    background-color: #18202e;
 }
 
 .img-holder .info-holder h3 {
-    color: #000;
+    color: #fff;
     text-align: left;
 }
 
 .img-holder .info-holder h3 span {
-    color: #000;
+    color: #fff;
 }
 
 .img-holder .info-holder h2 {
-    color: #000;
+    color: #fff;
     text-align: left;
 }
 
 .img-holder .info-holder h2 span {
-    color: #000;
+    color: #fff;
 }
 
 .img-holder .info-holder p {
-    color: #000;
+    color: #fff;
     text-align: left;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .form-content .form-items {
-    max-width: 340px;
+    max-width: 400px;
     text-align: left;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .form-content .page-links a.active:after {
-    background-color: #464e62;
+    background-color: #0092FE;
 }
 
 .form-content .page-links a:hover:after, .form-content .page-links a:focus:after {
@@ -227,15 +227,15 @@
 }
 
 .form-content .form-button .ibtn {
-    background-color: #464e62;
+    background-color: #0093FF;
     color: #fff;
-    -webkit-box-shadow: 0 0 0 rgba(73, 81, 101, 0.65);
-    box-shadow: 0 0 0 rgba(70, 78, 98, 0.58);
+    -webkit-box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
+    box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
 }
 
 .form-content .form-button .ibtn:hover, .form-content .form-button .ibtn:focus {
-    -webkit-box-shadow: 0 5px 6px rgba(70, 78, 98, 0.72);
-    box-shadow: 0 5px 6px rgba(70, 78, 98, 0.56);
+    -webkit-box-shadow: 0 5px 6px rgba(80, 182, 255, 0.31);
+    box-shadow: 0 5px 6px rgba(80, 182, 255, 0.31);
 }
 
 .form-content .form-button a {
@@ -477,6 +477,6 @@
     }
 
     .form-body.without-side .website-logo .logo {
-        background-image: url("../images/logo-dark.svg");
+        background-image: url("../images/logo-light.svg");
     }
 }

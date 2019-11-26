@@ -20,7 +20,7 @@
     1 - General Styles
 ------------------------------------*/
 *, body {
-    font-family: '', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -63,7 +63,7 @@ html, body {
 
 .website-logo .logo {
     display: inline-block;
-    background-image: url("../images/logo-light.svg");
+    background-image: url("../images/logo/logo.svg");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -72,9 +72,6 @@ html, body {
     width: 100px;
 }
 
-.website-logo .logo img.logo-size {
-    opacity: 0 !important;
-}
 
 .website-logo-inside {
     margin-bottom: 70px;
@@ -90,7 +87,7 @@ html, body {
 
 .website-logo-inside .logo {
     display: inline-block;
-    background-image: url("../images/logo-light.svg");
+    background-image: url("../images/logo/logo.svg");
     background-size: contain;
     background-repeat: no-repeat;
 }
