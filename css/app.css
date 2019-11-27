@@ -63,7 +63,7 @@ hr { border-top: 1px solid #e6ecf5; }
 
 .text-gray { color: #888da8 !important; }
 
-.text-primary { color: #7774e7 !important; }
+.text-primary { color: #3ab7e6 !important; }
 
 .text-success { color: #37c936 !important; }
 
@@ -1605,8 +1605,10 @@ iframe { border: 0; }
 
 .header .header-container .nav-left .notifications .counter, .header .header-container .nav-right .notifications .counter { position: absolute; right: 6px; top: 12px; background-color: #ff3c7e; color: #ffffff; padding: 3px 5.5px; border-radius: 50px; line-height: 1; font-size: 10px; }
 
-.header .header-container .nav-left .notifications .dropdown-menu, .header .header-container .nav-right .notifications .dropdown-menu { min-width: 350px; padding: 0px; }
-
+.header .header-container .nav-left .notifications .dropdown-menu, .header .header-container .nav-right .notifications .dropdown-menu {
+    min-width: 280px;
+    padding: 0px;
+}
 @media only screen and (max-width: 767px) { .header .header-container .nav-left .notifications .dropdown-menu, .header .header-container .nav-right .notifications .dropdown-menu { max-width: 300px; } }
 
 .header .header-container .nav-left .notifications .dropdown-menu .list-info, .header .header-container .nav-right .notifications .dropdown-menu .list-info { max-height: 248px; overflow-y: auto; position: relative; }
@@ -2227,10 +2229,16 @@ table.dataTable.no-footer { border-bottom: 1px solid #e6ecf5; margin-bottom: 20p
 
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover { color: #ffffff !important; background: #b7b5f2; border: 1px solid #b7b5f2; }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current { color: #ffffff !important; background: #7774e7; border: 1px solid #7774e7; }
-
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover { color: #ffffff !important; background: #7774e7; border: 1px solid #7774e7; }
-
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: #ffffff !important;
+    background: #232b3e;
+    border: 1px solid #232b3e;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #ffffff !important;
+    background: #109aee;
+    border: 1px solid #109aee;
+}
 .dataTables_wrapper .status { width: 5px; height: 5px; }
 
 .datepicker { border-radius: 0px; padding: 25px; box-shadow: none; border: 1px solid #e6ecf5; }

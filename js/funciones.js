@@ -203,7 +203,7 @@ var name_rol   = 0;
             var url=document.getElementById('ruta').value; //obtiene la ruta del input hidden con la variable <?=base_url()?>
             $.ajax({
                 url:''+url+'/'+controlador+'/',
-                type: 'POST',
+                type: 'GET',
                 dataType: 'JSON',
                 data: data,
                 beforeSend: function(){
