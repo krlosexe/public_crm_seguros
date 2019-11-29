@@ -647,6 +647,86 @@ $("#send_usuario").click(function() {
 }
 
 
+
+
+
+
+function GetClients(select){
+				
+  var url=document.getElementById('ruta').value;
+  $.ajax({
+    url:''+url+'/api/clients',
+    type:'GET',
+    data: {
+        "id_user": id_user,
+        "token"  : tokens,
+      },
+    dataType:'JSON',
+    async: false,
+    beforeSend: function(){
+    // mensajes('info', '<span>Buscando, espere por favor... <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></span>');
+    },
+    error: function (data) {
+      //mensajes('danger', '<span>Ha ocurrido un error, por favor intentelo de nuevo</span>');         
+    },
+    success: function(data){
+      $(select+" option").remove();
+      $(select+" option").remove();
+      $(select).append($('<option>',
+      {
+        value: "null",
+        text : "Seleccione"
+      }));
+
+
+      $(select).append($('<optgroup>',
+      {
+        label: "Personas"
+      }));
+
+
+      $.each(data.clients_people, function(i, item){
+
+        if (item.status == 1) {
+          $(select).append($('<option>',
+          {
+            value: item.id_clients_people,
+            text : item.names+" "+item.last_names
+          }));
+        }
+      });
+
+
+
+
+      $(select).append($('<optgroup>',
+      {
+        label: "Empresas"
+      }));
+
+
+      $.each(data.clients_company, function(i, item){
+
+        if (item.status == 1) {
+          $(select).append($('<option>',
+          {
+            value: item.id_clients_company,
+            text : item.business_name
+          }));
+        }
+      });
+
+
+
+
+    }
+  });
+}
+
+
+
+
+
 function showNoty(type, position, msg, time){
     noty({
       theme: 'app-noty',
