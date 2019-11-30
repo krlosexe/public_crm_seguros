@@ -671,54 +671,40 @@ function GetClients(select){
     },
     success: function(data){
       $(select+" option").remove();
-      $(select+" option").remove();
+      $(select+" optgroup").remove();
       $(select).append($('<option>',
       {
         value: "null",
         text : "Seleccione"
       }));
 
-
-      $(select).append($('<optgroup>',
-      {
-        label: "Personas"
-      }));
-
-
+      var html_clients = "";
       $.each(data.clients_people, function(i, item){
 
         if (item.status == 1) {
-          $(select).append($('<option>',
-          {
-            value: item.id_clients_people,
-            text : item.names+" "+item.last_names
-          }));
+          html_clients += "<option value='"+item.id_clients_people+"|0'>"+item.names+" "+item.last_names+"</option>"
         }
       });
+      var options_clients =  "<optgroup label='personas'>"+html_clients+"</optgroup>"
+      $(select).append(options_clients)
 
 
 
 
-      $(select).append($('<optgroup>',
-      {
-        label: "Empresas"
-      }));
 
-
+      var html_company = "";
       $.each(data.clients_company, function(i, item){
 
         if (item.status == 1) {
-          $(select).append($('<option>',
-          {
-            value: item.id_clients_company,
-            text : item.business_name
-          }));
+          html_company += "<option value='"+item.id_clients_company+"|1'>"+item.business_name+"</option>"
         }
       });
+      var options_company =  "<optgroup label='empresas'>"+html_company+"</optgroup>"
+      $(select).append(options_company)
 
-
-
-
+      $(select).selectize({
+        sortField: 'text'
+      });
     }
   });
 }
