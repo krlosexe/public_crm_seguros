@@ -734,3 +734,97 @@ function showNoty(type, position, msg, time){
 function DeleteTr(tr) {
   $(tr).remove()
 }
+
+
+
+
+
+
+
+function GetBranchs(select){
+				
+  var url=document.getElementById('ruta').value;
+  $.ajax({
+    url:''+url+'/api/branchs',
+    type:'GET',
+    data: {
+        "id_user": id_user,
+        "token"  : tokens,
+      },
+    dataType:'JSON',
+    async: false,
+    beforeSend: function(){
+    // mensajes('info', '<span>Buscando, espere por favor... <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></span>');
+    },
+    error: function (data) {
+      //mensajes('danger', '<span>Ha ocurrido un error, por favor intentelo de nuevo</span>');         
+    },
+    success: function(data){
+      $(select+" option").remove();
+      $(select).append($('<option>',
+      {
+        value: "null",
+        text : "Seleccione"
+      }));
+      $.each(data, function(i, item){
+        if (item.status == 1) {
+          $(select).append($('<option>',
+          {
+            value: item.id_branchs,
+            text : item.name
+          }));
+        }
+      });
+
+    }
+  });
+}
+
+
+
+
+
+
+
+function GetInsurers(select){
+				
+  var url=document.getElementById('ruta').value;
+  $.ajax({
+    url:''+url+'/api/insurers',
+    type:'GET',
+    data: {
+        "id_user": id_user,
+        "token"  : tokens,
+      },
+    dataType:'JSON',
+    async: false,
+    beforeSend: function(){
+    // mensajes('info', '<span>Buscando, espere por favor... <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></span>');
+    },
+    error: function (data) {
+      //mensajes('danger', '<span>Ha ocurrido un error, por favor intentelo de nuevo</span>');         
+    },
+    success: function(data){
+      $(select+" option").remove();
+      $(select).append($('<option>',
+      {
+        value: "null",
+        text : "Seleccione"
+      }));
+      $.each(data, function(i, item){
+        if (item.status == 1) {
+          $(select).append($('<option>',
+          {
+            value: item.id_insurers,
+            text : item.name
+          }));
+        }
+      });
+
+
+      $(select).selectize({
+        sortField: 'text'
+      });
+    }
+  });
+}
