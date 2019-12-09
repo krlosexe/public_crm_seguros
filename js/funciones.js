@@ -703,7 +703,7 @@ function GetClients(select){
       $(select).append(options_company)
 
       $(select).selectize({
-        sortField: 'text'
+        //sortField: 'text'
       });
     }
   });
@@ -823,7 +823,7 @@ function GetInsurers(select){
 
 
       $(select).selectize({
-        sortField: 'text'
+        ////sortField: 'textssss'
       });
     }
   });
@@ -871,7 +871,7 @@ function GetRamos(select){
 
 
       $(select).selectize({
-        sortField: 'text'
+        //sortField: 'text'
       });
     }
   });
