@@ -651,7 +651,7 @@ $("#send_usuario").click(function() {
 
 
 
-function GetClients(select){
+function GetClients(select, value_default = false){
 				
   var url=document.getElementById('ruta').value;
   $.ajax({
@@ -670,6 +670,14 @@ function GetClients(select){
       //mensajes('danger', '<span>Ha ocurrido un error, por favor intentelo de nuevo</span>');         
     },
     success: function(data){
+
+      $(select).each(function() {
+        if (this.selectize) {
+          this.selectize.destroy();
+        }
+     });
+
+
       $(select+" option").remove();
       $(select+" optgroup").remove();
       $(select).append($('<option>',
@@ -681,10 +689,19 @@ function GetClients(select){
       var html_clients = "";
       $.each(data.clients_people, function(i, item){
 
-        if (item.status == 1) {
-          html_clients += "<option value='"+item.id_clients_people+"|0'>"+item.names+" "+item.last_names+"</option>"
+        var option = item.id_clients_people+"|0"
+
+        if (item.status == 1) { 
+
+          var selected = ""
+          if(option == value_default){
+            selected = "selected"
+          }
+          
+          html_clients += "<option "+selected+" value='"+item.id_clients_people+"|0'>"+item.names+" "+item.last_names+"</option>"
         }
       });
+
       var options_clients =  "<optgroup label='personas'>"+html_clients+"</optgroup>"
       $(select).append(options_clients)
 
@@ -695,8 +712,17 @@ function GetClients(select){
       var html_company = "";
       $.each(data.clients_company, function(i, item){
 
+        var option = item.id_clients_company+"|1"
+        
         if (item.status == 1) {
-          html_company += "<option value='"+item.id_clients_company+"|1'>"+item.business_name+"</option>"
+          var option = item.id_clients_company+"|1"
+          var selected = ""
+          if(option == value_default){
+            selected = "selected"
+          }
+
+
+          html_company += "<option "+selected+" value='"+item.id_clients_company+"|1'>"+item.business_name+"</option>"
         }
       });
       var options_company =  "<optgroup label='empresas'>"+html_company+"</optgroup>"
@@ -786,7 +812,7 @@ function GetBranchs(select){
 
 
 
-function GetInsurers(select){
+function GetInsurers(select, select_default = false){
 				
   var url=document.getElementById('ruta').value;
   $.ajax({
@@ -805,6 +831,13 @@ function GetInsurers(select){
       //mensajes('danger', '<span>Ha ocurrido un error, por favor intentelo de nuevo</span>');         
     },
     success: function(data){
+
+      $(select).each(function() {
+        if (this.selectize) {
+          this.selectize.destroy();
+        }
+     });
+     
       $(select+" option").remove();
       $(select).append($('<option>',
       {
@@ -816,15 +849,15 @@ function GetInsurers(select){
           $(select).append($('<option>',
           {
             value: item.id_insurers,
-            text : item.name
+            text : item.name,
+            selected: select_default == item.id_insurers ? true : false
           }));
         }
       });
 
+      
 
-      $(select).selectize({
-        ////sortField: 'textssss'
-      });
+      $(select).selectize({});
     }
   });
 }
