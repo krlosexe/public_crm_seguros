@@ -338,32 +338,20 @@ var name_rol   = 0;
             html += '<ul class="collapse " id="collapse_'+item.nombre+'">'
 
               $.each(funciones, function(i2, item2){
-                  if(item.id_modulo == item2.id_modulo)
-                    html += '<li  id="nav_'+item2.route+'"><a class="collapse-item" href="'+item2.route+'">'+item2.nombre+'</a></li>'
+                  if((item.id_modulo == item2.id_modulo))
 
-                  if (uri == item2.route) {
-                    accede = true;
-                  }
+                    if(item2.visibilidad == 1){
+                      html += '<li  id="nav_'+item2.route+'"><a class="collapse-item" href="'+item2.route+'">'+item2.nombre+'</a></li>'
+                    }
+
+                    if (uri == item2.route) {
+                      accede = true;
+                    }
               });
 
             html += '</ul>'
         html += '</li>'
 
-          // html += '<div id="collapse_'+item.nombre+'" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">';
-
-          //   html += '<div class="bg-white py-2 collapse-inner rounded">';
-          //     html += '<h6 class="collapse-header">'+item.nombre+':</h6>';
-          //     $.each(funciones, function(i2, item2){
-          //         if(item.id_modulo == item2.id_modulo)
-          //           html += '<a class="collapse-item" id="nav_'+item2.route+'" href="'+item2.route+'">'+item2.nombre+'</a>'
-
-          //         if (uri == item2.route) {
-          //           accede = true;
-          //         }
-          //     });
-          //   html += '</div>';
-          // html += '</div>'
-        
       });
 
       if (!accede && uri != "dashboard") {
@@ -652,7 +640,7 @@ $("#send_usuario").click(function() {
 
 
 function GetClients(select, value_default = false){
-				
+
   var url=document.getElementById('ruta').value;
   $.ajax({
     url:''+url+'/api/clients',
