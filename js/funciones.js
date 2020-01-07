@@ -885,11 +885,70 @@ function GetRamos(select){
           $(select).append($('<option>',
           {
             value: item.id_branchs,
-            text : item.name
+            text : item.name,
+            
           }));
         }
       });
 
+
+      $(select).selectize({
+        //sortField: 'text'
+      });
+    }
+  });
+}
+
+
+
+
+
+
+
+
+function GetPolicies(select, select_default = false){
+				
+  var url=document.getElementById('ruta').value;
+  $.ajax({
+    url:''+url+'/api/policies',
+    type:'GET',
+    data: {
+        "id_user": id_user,
+        "token"  : tokens,
+      },
+    dataType:'JSON',
+    async: false,
+    beforeSend: function(){
+    // mensajes('info', '<span>Buscando, espere por favor... <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></span>');
+    },
+    error: function (data) {
+      //mensajes('danger', '<span>Ha ocurrido un error, por favor intentelo de nuevo</span>');         
+    },
+    success: function(data){
+
+      $(select).each(function() {
+        if (this.selectize) {
+          this.selectize.destroy();
+        }
+     });
+     
+      $(select+" option").remove();
+      $(select).append($('<option>',
+      {
+        value: "null",
+        text : "Seleccione"
+      }));
+      $.each(data, function(i, item){
+        
+        if (item.status == 1) {
+          $(select).append($('<option>',
+          {
+            value: item.id_policies,
+            text : item.number_policies,
+            selected: select_default == item.id_policies ? true : false
+          }));
+        }
+      });
 
       $(select).selectize({
         //sortField: 'text'
