@@ -314,43 +314,96 @@ var name_rol   = 0;
       var accede = false;
       var html   = "";
 
-       html += '<li class="nav-item dropdown">'
+      //  html += '<li class="nav-item dropdown">'
+      //     html += '<a class="dropdown-toggle" href="javascript:void(0);">'
+      //       html += '<span class="icon-holder">'
+      //         html +=		'<i class="ti-home"></i>'
+      //       html += '</span>'
+      //       html += '<span class="title">Inicio</span>'
+      //     html += '</a>'
+      //   html += '</li>'
+
+
+      html += '<li class="nav-item dropdown">'
+
           html += '<a class="dropdown-toggle" href="javascript:void(0);">'
+
             html += '<span class="icon-holder">'
-              html +=		'<i class="ti-home"></i>'
+              html += '<i class="ti-home"></i>'
             html += '</span>'
+
             html += '<span class="title">Inicio</span>'
+            html += '<span class="arrow">'
+              html += '<i class="ti-angle-right"></i>'
+            html += '</span>'
           html += '</a>'
+
         html += '</li>'
+
+
       $.each(modulos_disponibles, function(i, item){
 
+        // html += '<li class="nav-item dropdown" id="nav_li_'+item.nombre+'">'
+        //   html += '<a data-toggle="collapse" href="#collapse_'+item.nombre+'" role="button" aria-expanded="false" aria-controls="collapseExample" href="javascript:void(0);">'
+        //     html += '<span class="icon-holder">'
+        //       html +=		'<i class="'+item.icon+'"></i>'
+        //     html += '</span>'
+        //     html += '<span class="title">'+item.nombre+'</span>'
+        //     html += '<span class="arrow">'
+        //       html += '<i class="ti-angle-right"></i>'
+        //     html += '</span>'
+        //   html += '</a>'
+
+        //     html += '<ul class="collapse " id="collapse_'+item.nombre+'">'
+
+        //       $.each(funciones, function(i2, item2){
+        //           if((item.id_modulo == item2.id_modulo))
+
+        //             if(item2.visibilidad == 1){
+        //               html += '<li  id="nav_'+item2.route+'"><a class="collapse-item" href="'+item2.route+'">'+item2.nombre+'</a></li>'
+        //             }
+
+        //             if (uri == item2.route) {
+        //               accede = true;
+        //             }
+        //       });
+
+        //     html += '</ul>'
+        // html += '</li>'
+
         html += '<li class="nav-item dropdown" id="nav_li_'+item.nombre+'">'
-          html += '<a data-toggle="collapse" href="#collapse_'+item.nombre+'" role="button" aria-expanded="false" aria-controls="collapseExample" href="javascript:void(0);">'
+
+          html += '<a class="dropdown-toggle" href="javascript:void(0);">'
+
             html += '<span class="icon-holder">'
-              html +=		'<i class="'+item.icon+'"></i>'
+              html += '<i class="'+item.icon+'"></i>'
             html += '</span>'
+
             html += '<span class="title">'+item.nombre+'</span>'
             html += '<span class="arrow">'
               html += '<i class="ti-angle-right"></i>'
             html += '</span>'
           html += '</a>'
 
-            html += '<ul class="collapse " id="collapse_'+item.nombre+'">'
+            html += '<ul class="dropdown-menu">'
 
               $.each(funciones, function(i2, item2){
-                  if((item.id_modulo == item2.id_modulo))
+                if((item.id_modulo == item2.id_modulo))
 
                     if(item2.visibilidad == 1){
-                      html += '<li  id="nav_'+item2.route+'"><a class="collapse-item" href="'+item2.route+'">'+item2.nombre+'</a></li>'
+                       
+                        html += '<li id="nav_'+item2.route+'"><a href="'+item2.route+'">'+item2.nombre+'</a></li>'
                     }
-
+        
                     if (uri == item2.route) {
                       accede = true;
                     }
               });
-
             html += '</ul>'
+
         html += '</li>'
+
+        
 
       });
 
@@ -359,12 +412,15 @@ var name_rol   = 0;
         window.location.href = url+"/dashboard";  
       }
 
+
+
+
+ 
+
       $("#options").html(html);
 
-   
+      init()
     }
-
-
 
 
 
@@ -990,3 +1046,181 @@ function inNum(monto) {
     return myNumeral.value();
 }
 
+
+
+	// Side Nav
+	function sideNav() {
+		$('.side-nav .side-nav-menu li a').on('click', function(e) {
+			if ($(this).parent().hasClass("open")) {
+
+				$(this).parent().children('.dropdown-menu').slideUp(200, function() {
+					$(this).parent().removeClass("open");
+				});
+
+			} else {
+				$(this).parent().parent().children('li.open').children('.dropdown-menu').slideUp(200);
+				$(this).parent().parent().children('li.open').children('a').removeClass('open');
+				$(this).parent().parent().children('li.open').removeClass("open");
+				$(this).parent().children('.dropdown-menu').slideDown(200, function() {
+					$(this).parent().addClass("open");
+				});
+			}
+		});
+	}	
+	
+	// Side Nav Toogle
+	function sideNavToggle() {
+		$('.side-nav-toggle').on('click', function(e) {
+	        $('.app').toggleClass("is-collapsed");
+	        e.preventDefault();
+	    });
+	}	
+
+	// Side Panel Toogle
+	function sidePanelToggle() {
+		$('.side-panel-toggle').on('click', function(e) {
+	        $('.side-panel').toggleClass("side-panel-open");
+	        e.preventDefault();
+	    });
+	}	
+
+	// Chat Toggle
+	function chatToggle() {
+		$('.chat-toggle').on('click', function(e) {
+	        $('.chat').toggleClass("open");
+	        e.preventDefault();
+	    });
+	}	
+
+	// Todo Toggle
+	function todoToggle() {
+		$('.todo-toggle').on('click', function(e) {
+	        $('.todo-wrapper').toggleClass("open");
+	        e.preventDefault();
+	    });
+	}	
+
+	// Search Toggle 
+	function searchToggle() {
+		$('.search-toggle').on('click', function(e) {
+			$('.search-box, .search-input').toggleClass("active");
+			$('.search-input input').focus();
+			e.preventDefault();
+		});
+	}	
+
+	// Advance Search
+	function advanceSearch() {
+		$('.search-input input').on('keyup',function(){
+			if($(this).val().length > 0) {
+				$('.advanced-search').addClass("active");
+			} 
+			else {
+		       $('.advanced-search').removeClass("active");
+		    }
+		    $('.serach-text-bind').html($(this).val());
+		})	
+	} 
+
+	// Theme Configurator
+	function themeConfig() {
+		$('.theme-toggle, .config-close').on('click', function(e) {
+	        $('.theme-configurator').toggleClass("theme-config-open");
+	        e.preventDefault();
+	    });
+	}	
+
+	// Perfect Scroll Bar
+	function perfectSB() {
+		$('.scrollable').perfectScrollbar();
+	}
+
+	//Card Portlet Refresh
+	function cardPortletCtrl() {
+
+		//card refresh
+		$('[data-toggle=card-refresh]').on('click',function(e) {
+			var cardRefreshSelector = $(this).parents('.card');
+		    cardRefreshSelector.addClass('card-refresh');
+		    window.setTimeout(function () {
+		        cardRefreshSelector.removeClass('card-refresh');
+		    }, 2000);
+		    e.preventDefault();
+		    e.stopPropagation();
+		});
+
+		//card delete
+		$('[data-toggle=card-delete]').on('click',function(e) {
+			var cardDeleteSelector = $(this).parents('.card');
+		    cardDeleteSelector.addClass('animated zoomOut');
+		    cardDeleteSelector.bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function () {
+		        cardDeleteSelector.remove();
+		    });
+		    e.preventDefault();
+		    e.stopPropagation();
+		});
+	}
+
+	//Theme Config 
+	function themeColorConfig() {
+
+		$(".header-default input").change(function() {
+            $('.app').removeClass("header-primary header-info header-success header-danger header-dark");
+		})
+
+		$(".header-info input").change(function() {
+		    $('.app').addClass("header-info")
+            $('.app').removeClass("header-primary header-success header-danger header-dark");
+		});
+
+		$(".header-primary input").change(function() {
+		    $('.app').addClass("header-primary")
+            $('.app').removeClass("header-info header-success header-danger header-dark");
+		});
+
+		$(".header-success input").change(function() {
+		    $('.app').addClass("header-success")
+            $('.app').removeClass("header-info header-primary header-danger header-dark");
+		});
+
+		$(".header-danger input").change(function() {
+		    $('.app').addClass("header-danger")
+            $('.app').removeClass("header-info header-primary header-success header-dark");
+		});
+
+		$(".header-dark input").change(function() {
+		    $('.app').addClass("header-dark")
+            $('.app').removeClass("header-info header-primary header-success header-danger");
+		});
+
+		$(".theme-colors.side-nav-dark input").change(function() {
+		    $('.app').addClass("side-nav-dark")
+            $('.app').removeClass("side-nav-default");
+		});
+
+		$(".theme-colors.sidenav-default input").change(function() {
+		    $('.app').addClass("side-nav-default")
+            $('.app').removeClass("side-nav-dark");
+		});
+
+		$('#rtl-toogle').on('click', function(e) {
+	        $('.app').toggleClass("rtl");
+	        e.preventDefault();
+	    });
+	}	
+
+
+
+function init() {
+  sideNav();
+ // sideNavToggle();
+  sidePanelToggle();
+  chatToggle();
+  todoToggle();
+  searchToggle();
+  advanceSearch();
+  themeConfig();
+  perfectSB();
+  cardPortletCtrl();
+  themeColorConfig();
+}

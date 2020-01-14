@@ -35,7 +35,8 @@
 }
 
 .website-logo .logo img {
-    width: 100px;
+    width: 230px;
+    margin-left: -50px;
 }
 
 .website-logo-inside img {
@@ -52,7 +53,7 @@
 
 .img-holder {
     width: 550px;
-    background-color: #18202e;
+    background-color: #323255;
 }
 
 .img-holder .info-holder h3 {
@@ -227,7 +228,7 @@
 }
 
 .form-content .form-button .ibtn {
-    background-color: #0093FF;
+    background-color: #5680ff;
     color: #fff;
     -webkit-box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
     box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
@@ -446,7 +447,7 @@
 }
 
 .form-body.without-side .form-content .form-button .ibtn {
-    background-color: #0093FF;
+    background-color: #5680ff;
     color: #fff;
     -webkit-box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
     box-shadow: 0 0 0 rgba(80, 182, 255, 0.31);
