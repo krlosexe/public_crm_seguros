@@ -1,5 +1,6 @@
 // Calendar JavaScripts
 
+
 (function ($) {
 	'use strict';
   	
@@ -8,7 +9,7 @@
     var m = date.getMonth();
     var y = date.getFullYear();
     var events = [{
-				    title: 'All Day Event',
+				    title: 'Todos los eventos',
 		        	start: new Date(y, m, 1),
 		        	desc:'Meetings',
 		        	bullet: 'success' 
@@ -52,6 +53,7 @@
 		    ];
 
   	 $('#full-calendar').fullCalendar({
+  		lang: 'es',
         height: 800,
         editable: true,
         header:{
@@ -66,3 +68,4 @@
   	 $('.end-date').datepicker();
 
 })(jQuery);
+

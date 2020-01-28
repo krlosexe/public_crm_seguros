@@ -314,16 +314,6 @@ var name_rol   = 0;
       var accede = false;
       var html   = "";
 
-      //  html += '<li class="nav-item dropdown">'
-      //     html += '<a class="dropdown-toggle" href="javascript:void(0);">'
-      //       html += '<span class="icon-holder">'
-      //         html +=		'<i class="ti-home"></i>'
-      //       html += '</span>'
-      //       html += '<span class="title">Inicio</span>'
-      //     html += '</a>'
-      //   html += '</li>'
-
-
       html += '<li class="nav-item dropdown">'
 
           html += '<a class="dropdown-toggle" href="javascript:void(0);">'
@@ -342,34 +332,6 @@ var name_rol   = 0;
 
 
       $.each(modulos_disponibles, function(i, item){
-
-        // html += '<li class="nav-item dropdown" id="nav_li_'+item.nombre+'">'
-        //   html += '<a data-toggle="collapse" href="#collapse_'+item.nombre+'" role="button" aria-expanded="false" aria-controls="collapseExample" href="javascript:void(0);">'
-        //     html += '<span class="icon-holder">'
-        //       html +=		'<i class="'+item.icon+'"></i>'
-        //     html += '</span>'
-        //     html += '<span class="title">'+item.nombre+'</span>'
-        //     html += '<span class="arrow">'
-        //       html += '<i class="ti-angle-right"></i>'
-        //     html += '</span>'
-        //   html += '</a>'
-
-        //     html += '<ul class="collapse " id="collapse_'+item.nombre+'">'
-
-        //       $.each(funciones, function(i2, item2){
-        //           if((item.id_modulo == item2.id_modulo))
-
-        //             if(item2.visibilidad == 1){
-        //               html += '<li  id="nav_'+item2.route+'"><a class="collapse-item" href="'+item2.route+'">'+item2.nombre+'</a></li>'
-        //             }
-
-        //             if (uri == item2.route) {
-        //               accede = true;
-        //             }
-        //       });
-
-        //     html += '</ul>'
-        // html += '</li>'
 
         html += '<li class="nav-item dropdown" id="nav_li_'+item.nombre+'">'
 
@@ -392,7 +354,7 @@ var name_rol   = 0;
 
                     if(item2.visibilidad == 1){
                        
-                        html += '<li id="nav_'+item2.route+'"><a href="'+item2.route+'">'+item2.nombre+'</a></li>'
+                        html += '<li id="nav_'+item2.route+'"><a href="/'+item2.route+'">'+item2.nombre+'</a></li>'
                     }
         
                     if (uri == item2.route) {
@@ -1224,3 +1186,119 @@ function init() {
   cardPortletCtrl();
   themeColorConfig();
 }
+
+
+
+
+function GetTypeSubCompany(select, select_default = false){
+				
+  var url=document.getElementById('ruta').value;
+  $.ajax({
+    url:''+url+'/api/sub/company',
+    type:'GET',
+    data: {
+        "id_user": id_user,
+        "token"  : tokens,
+      },
+    dataType:'JSON',
+    async: false,
+    beforeSend: function(){
+    // mensajes('info', '<span>Buscando, espere por favor... <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></span>');
+    },
+    error: function (data) {
+      //mensajes('danger', '<span>Ha ocurrido un error, por favor intentelo de nuevo</span>');         
+    },
+    success: function(data){
+
+      $(select).each(function() {
+        if (this.selectize) {
+          this.selectize.destroy();
+        }
+     });
+     
+      $(select+" option").remove();
+      $(select).append($('<option>',
+      {
+        value: "null",
+        text : "Seleccione"
+      }));
+
+      console.log(data)
+      $.each(data, function(i, item){
+        
+        if (item.status == 1) {
+          $(select).append($('<option>',
+          {
+            value: item.id_type_sub_company,
+            text : item.name,
+            selected: select_default == item.id_type_sub_company ? true : false
+          }));
+        }
+      });
+
+      $(select).selectize({
+        //sortField: 'text'
+      });
+    }
+  });
+}
+
+
+
+
+
+
+
+function GetUsers(select, select_default = false){
+				
+  var url=document.getElementById('ruta').value;
+  $.ajax({
+    url:''+url+'/api/user',
+    type:'GET',
+    data: {
+        "id_user": id_user,
+        "token"  : tokens,
+      },
+    dataType:'JSON',
+    async: false,
+    beforeSend: function(){
+    // mensajes('info', '<span>Buscando, espere por favor... <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></span>');
+    },
+    error: function (data) {
+      //mensajes('danger', '<span>Ha ocurrido un error, por favor intentelo de nuevo</span>');         
+    },
+    success: function(data){
+
+      $(select).each(function() {
+        if (this.selectize) {
+          this.selectize.destroy();
+        }
+     });
+     
+      $(select+" option").remove();
+      $(select).append($('<option>',
+      {
+        value: "null",
+        text : "Seleccione"
+      }));
+
+      $.each(data, function(i, item){
+        
+        if (item.status == 1) {
+          $(select).append($('<option>',
+          {
+            value: item.id,
+            text : item.nombres+" "+item.apellido_p,
+            selected: select_default == item.id_type_sub_company ? true : false
+          }));
+        }
+      });
+
+      $(select).selectize({
+        //sortField: 'text'
+      });
+    }
+  });
+}
+
+

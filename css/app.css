@@ -39,7 +39,7 @@ ul { margin-bottom: 0px; }
 
 a { color: #0f9aee; }
 
-a:hover, a:focus { text-decoration: none; color: #0c7bbe; }
+a:hover, a:focus { text-decoration: none; color: #5680f9; }
 
 a:focus { outline: none; }
 
@@ -2255,7 +2255,10 @@ table.dataTable.no-footer { border-bottom: 1px solid #e6ecf5; margin-bottom: 20p
 .datepicker table tr th, .datepicker table tr td { border-radius: 0px; width: 40px; height: 35px; }
 
 .datepicker table tr td { transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; }
-
+td a {
+    color: #686a79;
+    text-decoration: underline;
+}
 .datepicker table tr td span { border-radius: 0px; }
 
 .datepicker table tr td span.active:active, .datepicker table tr td span.active:hover:active, .datepicker table tr td span.active.disabled:active, .datepicker table tr td span.active.disabled:hover:active, .datepicker table tr td span.active.active, .datepicker table tr td span.active:hover.active, .datepicker table tr td span.active.disabled.active, .datepicker table tr td span.active.disabled:hover.active, .datepicker table tr td span.active.active:hover, .datepicker table tr td span.active:hover.active:hover, .datepicker table tr td.active:active, .datepicker table tr td.active.highlighted:active, .datepicker table tr td.active.active, .datepicker table tr td.active.highlighted.active, .datepicker table tr td.active:active:hover, .datepicker table tr td.active.highlighted:active:hover, .datepicker table tr td.active.active:hover, .datepicker table tr td.active.highlighted.active:hover, .datepicker table tr td.active:active:focus, .datepicker table tr td.active.highlighted:active:focus, .datepicker table tr td.active.active:focus, .datepicker table tr td.active.highlighted.active:focus, .datepicker table tr td.active:active.focus, .datepicker table tr td.active.highlighted:active.focus, .datepicker table tr td.active.active.focus, .datepicker table tr td.active.highlighted.active.focus { color: #ffffff; background-color: #7774e7; border-color: transparent; }
