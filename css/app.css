@@ -117,7 +117,12 @@ hr { border-top: 1px solid #e6ecf5; }
 blockquote { border-left: 0px; padding-left: 30px; position: relative; }
 
 blockquote:before { font-family: 'themify'; content: "\e67f"; position: absolute; left: 0px; color: #515365; }
-
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgba(230, 236, 245, 0);
+}
 .fade.in { opacity: 1; }
 
 .collapse.in { display: block; }
@@ -1447,7 +1452,7 @@ iframe { border: 0; }
 
 .side-nav .side-nav-inner .side-nav-menu li a:hover, .side-nav .side-nav-inner .side-nav-menu li a:focus { text-decoration: none; color: #515365; }
 
-.side-nav .side-nav-inner .side-nav-menu li a:hover .icon-holder, .side-nav .side-nav-inner .side-nav-menu li a:focus .icon-holder { color: #0f9aee; }
+.side-nav .side-nav-inner .side-nav-menu li a:hover .icon-holder, .side-nav .side-nav-inner .side-nav-menu li a:focus .icon-holder { color: #5680f6; }
 
 .side-nav .side-nav-inner .side-nav-menu > li.dropdown ul.dropdown-menu { position: relative; width: 100%; box-shadow: none; border: 0px; border-radius: 0; padding-left: 50px; padding-top: 0px; background-color: transparent; float: none; }
 
@@ -1484,8 +1489,8 @@ iframe { border: 0; }
 @media only screen and (min-width: 1440px) { .is-collapsed .side-nav { width: 70px; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-logo { border-bottom: 1px solid transparent; padding: 0px; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo { width: 70px; background-position: center center; }
-  .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo-dark { background-image: url("../images/logo/logo-sm.png") !important; }
-  .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo-white { background-image: url("../images/logo/logo-white-sm.png") !important; }
+  .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo-dark { background-image: url("https://chseguros.com.co/wp-content/uploads/2020/02/nuevologo.svg") !important; }
+  .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo-white { background-image: url("https://chseguros.com.co/wp-content/uploads/2020/02/nuevologo.svg") !important; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-menu { overflow-x: hidden; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-menu > li > a .title { display: none; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-menu li.dropdown .arrow { opacity: 0; }
@@ -1494,7 +1499,7 @@ iframe { border: 0; }
   .is-collapsed .side-nav:hover .side-nav-inner .side-nav-logo { padding: 0px 20px; border-bottom: 1px solid #e6ecf5; }
   .is-collapsed .side-nav:hover .side-nav-inner .side-nav-logo a .logo { width: 150px; background-position: center left; }
   .is-collapsed .side-nav:hover .side-nav-inner .side-nav-logo a .logo-dark { background-image: url("../images/logo/logo.png") !important; }
-  .is-collapsed .side-nav:hover .side-nav-inner .side-nav-logo a .logo-white { background-image: url("../images/logo/logo-white.png") !important; }
+  .is-collapsed .side-nav:hover .side-nav-inner .side-nav-logo a .logo-white { background-image: url("https://chseguros.com.co/wp-content/uploads/2020/02/nuevologo.svg") !important; }
   .is-collapsed .side-nav:hover .side-nav-inner .side-nav-menu > li > a .title { display: inline-block; }
   .is-collapsed .side-nav:hover .side-nav-inner .side-nav-menu li.dropdown .arrow { opacity: 1; }
   .is-collapsed .side-nav:hover .side-nav-inner .side-nav-menu li.open > ul.dropdown-menu { display: block !important; } }
@@ -1503,7 +1508,7 @@ iframe { border: 0; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-logo { padding: 0px 20px; border-bottom: 1px solid #e6ecf5; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo { width: 150px; background-position: center left; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo-dark { background-image: url("../images/logo/logo.png") !important; }
-  .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo-white { background-image: url("../images/logo/logo-white.png") !important; }
+  .is-collapsed .side-nav .side-nav-inner .side-nav-logo > a .logo-white { background-image: url("https://chseguros.com.co/wp-content/uploads/2020/02/nuevologo.svg") !important; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-menu > li > a .title { display: inline-block; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-menu li.dropdown .arrow { opacity: 1; }
   .is-collapsed .side-nav .side-nav-inner .side-nav-menu li.open > ul.dropdown-menu { display: block !important; } }
@@ -2910,7 +2915,7 @@ label.success { color: #37c936; }
 
 .tag-danger { background-color: #ff3c7e; color: #ffffff; }
 
-.card { position: relative; background-color: #ffffff; margin-bottom: 30px; border: 0px solid #e6ecf5; transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s; border-radius: 15px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
+.card { position: relative; background-color: #ffffff; margin-bottom: 30px; border: 1px solid #e6ecf5; transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s; border-radius: 15px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
 
 .card.bg-primary, .card.bg-success, .card.bg-info, .card.bg-warning, .card.bg-danger { color: #e6e5e5; }
 
@@ -3199,7 +3204,11 @@ a.card:hover, a.card:focus { -webkit-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.075)
 
 .nav-pills > li > a.active:hover, .nav-pills > li > a.active:focus { color: #ffffff; border-color: #7774e7; background-color: #7774e7; border: 1px solid #7774e7; opacity: 1; }
 
-.nav-pills > li > a.active.nav-link { color: #ffffff; background-color: #7774e7; border-color: #7774e7; }
+.nav-pills > li > a.active.nav-link {
+    color: #ffffff;
+    background-color: #567ff9;
+    border-color: #567ff9;
+}
 
 .nav-vertical .nav-pills { float: left; width: 160px; padding: 0px 15px; display: block; }
 

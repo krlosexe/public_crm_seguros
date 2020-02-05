@@ -668,7 +668,7 @@ function GetClients(select, value_default = false){
         "token"  : tokens,
       },
     dataType:'JSON',
-    async: false,
+      
     beforeSend: function(){
     // mensajes('info', '<span>Buscando, espere por favor... <i class="fa fa-spinner fa-spin" aria-hidden="true"></i></span>');
     },
