@@ -8,7 +8,6 @@ var registrar  = 0;
 
 var name_rol   = 0;
 
-
 /* ------------------------------------------------------------------------------- */
     /*
         Variable para el idioma del datatable.
