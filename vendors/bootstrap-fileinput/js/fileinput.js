@@ -5557,7 +5557,7 @@
         fileSingle: 'file',
         filePlural: 'files',
         browseLabel: 'Browse &hellip;',
-        removeLabel: 'Remove',
+        removeLabel: 'Borrar',
         removeTitle: 'Clear all unprocessed files',
         cancelLabel: 'Cancel',
         cancelTitle: 'Abort ongoing upload',
@@ -5567,10 +5567,10 @@
         uploadTitle: 'Upload selected files',
         msgNo: 'No',
         msgNoFilesSelected: 'No files selected',
-        msgCancelled: 'Cancelled',
-        msgPaused: 'Paused',
-        msgPlaceholder: 'Select {files}...',
-        msgZoomModalHeading: 'Detailed Preview',
+        msgCancelled: 'Cancelar',
+        msgPaused: 'Pausar',
+        msgPlaceholder: 'Buscar {files}...',
+        msgZoomModalHeading: 'Vista previa',
         msgFileRequired: 'You must select a file to upload.',
         msgSizeTooSmall: 'File "{name}" (<b>{size} KB</b>) is too small and must be larger than <b>{minSize} KB</b>.',
         msgSizeTooLarge: 'File "{name}" (<b>{size} KB</b>) exceeds maximum allowed upload size of <b>{maxSize} KB</b>.',
@@ -5627,7 +5627,7 @@
             uploadBatch: 'batch file upload',
             uploadExtra: 'form data upload'
         },
-        dropZoneTitle: 'Drag & drop files here &hellip;',
+        dropZoneTitle: 'Arrastra y sulta archivos aquí &hellip;',
         dropZoneClickTitle: '<br>(or click to select {files})',
         previewZoomButtonTitles: {
             prev: 'View previous file',
@@ -5635,7 +5635,7 @@
             toggleheader: 'Toggle header',
             fullscreen: 'Toggle full screen',
             borderless: 'Toggle borderless mode',
-            close: 'Close detailed preview'
+            close: 'Cerrar vista previa'
         }
     };
 

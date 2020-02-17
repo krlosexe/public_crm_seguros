@@ -3407,7 +3407,7 @@ glyphs.character-mapping { margin: 0 0 20px 0; padding: 20px 0 20px 30px; color:
 
 .fc-basic-view .fc-day-number.fc-today.fc-today .fc-day-number { float: none; }
 
-.fc-event-container .fc-event { border-radius: 0px; border: 0px; background-color: #e5f4fd; color: #0f9aee !important; font-size: 12px; line-height: 2.5; padding: 0px 15px; }
+.fc-event-container .fc-event { border-radius: 0px; border: 0px; background-color: #e5f4fd; /*color: #0f9aee !important;*/ font-size: 12px; line-height: 2.5; padding: 0px 15px; }
 
 .fc-event-container .fc-day-grid-event { margin: 1px 5px 5px; }
 
