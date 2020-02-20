@@ -15,6 +15,15 @@ body { font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe
 
 h1, h2, h3, h4, h5, h6 { color: #515365; font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; letter-spacing: 0.5px; font-weight: normal; line-height: 1.5; }
 
+input, select, textarea {
+  text-transform: uppercase !important;
+}
+td{
+	    text-transform: uppercase !important;
+	    font-size: 14px;
+}
+input::-webkit-input-placeholder {text-transform: lowercase;}
+input::-moz-placeholder {text-transform: lowercase;}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-weight: 300; color: #5c5f73; }
@@ -2359,7 +2368,7 @@ button:active:focus { outline: none; box-shadow: none; }
 
 button.disabled, button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-.btn { cursor: pointer; font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; letter-spacing: 1px; font-size: 13px; padding: 10px 20px; border-radius: 6px; margin-right: 5px; margin-bottom: 10px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
+.btn { cursor: pointer; font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; letter-spacing: 1px; font-size: 13px; padding: 7.5px 15px; border-radius: 6px; margin-right: 5px; margin-bottom: 10px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
 
 .btn.dropdown-toggle { margin-bottom: 0px; }
 
