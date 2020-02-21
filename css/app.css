@@ -22,6 +22,7 @@ td{
 	    text-transform: uppercase !important;
 	    font-size: 14px;
 }
+
 input::-webkit-input-placeholder {text-transform: lowercase;}
 input::-moz-placeholder {text-transform: lowercase;}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
