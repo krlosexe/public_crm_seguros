@@ -353,7 +353,7 @@ var name_rol   = 0;
 
                     if(item2.visibilidad == 1){
                        
-                        html += '<li id="nav_'+item2.route+'"><a href="/'+item2.route+'">'+item2.nombre+'</a></li>'
+                        html += '<li id="nav_'+item2.route+'"><a href="./'+item2.route+'">'+item2.nombre+'</a></li>'
                     }
         
                     if (uri == item2.route) {
