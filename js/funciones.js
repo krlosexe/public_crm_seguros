@@ -7,7 +7,7 @@ var borrar     = 0;
 var registrar  = 0;
 
 var name_rol   = 0;
-
+var id_rol     = 0;
 /* ------------------------------------------------------------------------------- */
     /*
         Variable para el idioma del datatable.
@@ -300,6 +300,7 @@ var name_rol   = 0;
 
                 id_user  = respuesta.data.id_user;
                 tokens   = respuesta.data.token;
+                id_rol   = respuesta.data_user.id_rol;
             }
 
         });
@@ -555,7 +556,7 @@ $("#send_usuario").click(function() {
 
   function verifyPersmisos(id_usuario, token, route){
 
-
+    console.log(route)
     var url=document.getElementById('ruta').value; //obtiene la ruta del input hidden con la variable <?=base_url()?>
         
 
