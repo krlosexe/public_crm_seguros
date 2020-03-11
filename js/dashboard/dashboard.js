@@ -17,7 +17,6 @@
 		white = '#fff',
 		dark = '#515365'
 
-  
 
     var sparklineBarData = [32, 38, 36, 35, 38, 37, 35, 34, 36, 38, 36, 37, 35, 34, 37, 38, 38];
     $("#bar-config").sparkline(sparklineBarData,  
@@ -29,7 +28,6 @@
         barColor: info
     });
 
-    
 
     var lineChart = document.getElementById("line-chart");
     var lineCtx = lineChart.getContext('2d');
